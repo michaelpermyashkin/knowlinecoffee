@@ -1,0 +1,56 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %} Home {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/main/home-styles.css' %}">
+{% endblock style %}
+{% block content %}
+<div class="updates-container">
+    <div class="recent-updates">
+
+        <!-- Starbucks Design -->
+        <div class="starbucks-container">
+            <div class="store-logo-container">
+                <img src="{% static 'main/media/starbucks.png' %}" alt="Startbucks Logo" class="starbucks-logo">
+            </div>
+            <div class="text-container">
+                <div class="current-waiting">
+                    <div class="count">
+                        <h1 class="starbuck-waiting-count">{{ starbucks_display }}</h1>
+                        <p>waiting</p>
+                    </div>
+                </div>
+                <h3 id="starbucks-update">Last update{{ SB_elapsed }}</h3>
+            </div>
+        </div>
+
+        <!-- Dunkin Design -->
+        <div class="dunkin-container">
+            <div class="store-logo-container">
+                <img src="{% static 'main/media/dunkin.png' %}" alt="Dunkin Donuts Logo" class="dunkin-logo">
+            </div>
+            <div class="text-container">
+                <div class="current-waiting">
+                    <div class="count">
+                        <h1 class="dunkin-waiting-count">{{ dunkin_display }}</h1>
+                        <p>waiting</p>
+                    </div>
+                </div>
+                <h3 id="dunkin-update">Last update{{ DD_elapsed }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="options-container">
+    <div>
+        <a class="update" href="{% url 'main-update-options' %}">
+            Update 
+        </a>
+    </div>
+    <!-- <div class="request-container">
+        <a class="request" href="{% url 'main-request-options' %}">Request</a>
+    </div> -->
+</div>
+{% endblock content %}

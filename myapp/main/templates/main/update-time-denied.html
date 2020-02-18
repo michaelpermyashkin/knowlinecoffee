@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %} Update {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/main/update-denied-styles.css' %}?version=11">
+<meta http-equiv="refresh" content="3;{% url 'main-home' %}">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="message-header">
+        <h1 id="top">Try again soon<h1>        
+    </div>
+    <div class="message">
+        <h2>You can update us again in 1 minute!</h2>             
+    </div>
+</div>
+{% endblock content %}

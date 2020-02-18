@@ -1,0 +1,27 @@
+.container {
+    margin: 5vh .5vw 2vh .5vw;
+    display: inline-block;
+    font-size: calc(4pt + .5vw);
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 10px 4vh 2vh 4vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    .message-header {
+        font-size: 1.2em;
+        color: #b75353;
+        border-radius: 10px;
+    }
+    .message {
+        font-size: 1.1em;
+        margin-top: 5vh;
+        color: rgb(81, 81, 81);
+    }
+    .remaining {
+        margin-top: 2vh;
+        color: #8e8e8e;
+    }
+        h3 {
+            color: #989898;
+        }

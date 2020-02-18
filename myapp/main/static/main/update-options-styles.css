@@ -1,0 +1,28 @@
+.container {
+    font-size: .9em;
+    color: #535353;
+    margin-top: 0vh;
+}
+.store-logo-container {
+    margin: 0vh .5vw 2vh .5vw;
+    display: inline-block;
+    font-size: calc(4pt + .5vw);
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 10px 0 2vh 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    .store-logo-container a {
+        text-decoration: none;
+    }
+    #starbucks-logo {
+        width: auto;
+        height: 100px;
+        padding: 1vh 9vw;
+    }
+    #dunkin-logo {
+        width: auto;
+        height: 100px;
+        padding: 1vh 9vw;
+    }

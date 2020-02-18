@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %} Request {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/main/request-options-styles.css' %}?version=1">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="store-logo-container">
+        <h1>Select store to request update</h1>
+        <br>
+        <a href="{% url 'main-request-sent' %}">
+            <img id="starbucks-logo" src="{% static 'main/media/starbucks.png' %}" alt="Starbucks Logo">
+        </a>           
+        <a href="{% url 'main-request-sent' %}">
+            <img id="dunkin-logo" src="{% static 'main/media/dunkin.png' %}" alt="Dunkin Logo">
+        </a>
+    </div>
+</div> 
+{% endblock content %}
+

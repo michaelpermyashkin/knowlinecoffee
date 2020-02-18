@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %} Update {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/main/update-denied-styles.css' %}?version=11">
+<meta http-equiv="refresh" content="4;{% url 'main-home' %}">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="message-header">
+        <h1 id="top">Oops, geolocation unavailable<h1>        
+    </div>
+    <div class="message">
+        <h2>Your device does not support geolocation</h2>
+        <h3>You may need to change your browser settings to share your location</h3>
+    </div>
+</div>
+{% endblock content %}

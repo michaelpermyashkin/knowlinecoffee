@@ -1,0 +1,86 @@
+.container {
+    margin: 1vh .5vw 2vh .5vw;
+    display: inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: calc(4pt + .5vw);
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 10px;
+    width: 90vw;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    .header h1 {
+        font-size: 18pt;
+        margin-bottom: -.2vh;
+    }
+    .header p {
+        font-size: 8pt;
+        color: #919191;
+    }
+    .header a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        border: 1px solid rgb(0, 0, 0);
+        padding: 1px 6px;
+        border-radius: 5px;
+    }
+input[type=text], select, textarea {
+    width: 60%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    opacity: 50%; 
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+input[type=text]:focus {
+    background-color: rgb(170, 205, 253);
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+input[type=password] {
+    width: 60%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    opacity: 50%; 
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+input[type=password]:focus {
+    background-color: rgb(170, 205, 253);
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+button {
+    border: 0;
+    border-radius: 0;
+    background: none;
+    font-size: 10pt;
+    margin-top: 2vh;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: none;
+    outline: none;
+}
+    #submit {
+        color: rgb(255, 255, 255);
+            background-color: #53b796;
+    }
+    #cancel {
+        border: 0;
+        border-radius: 0;
+        background: none; 
+        text-decoration: none;
+        font-size: 10pt;
+        margin-top: 2vh;
+        margin-left: 5px; 
+        padding: 5px 15px;
+        border-radius: 5px;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        background-color: #d07575;
+    }

@@ -1,0 +1,70 @@
+h1 {
+    margin: 15vh 0 1vh 0;
+    font-size: 2em;
+    color: #808080
+}
+p {
+    font-size: 1.1em;
+    color: #909090
+}
+.options {
+    display: inline-block;
+}
+    .options button {
+        border: 0;
+        background: none;
+        box-shadow: none;
+        border-radius: 0px;
+        cursor: pointer;
+    }
+    .options a {
+        text-decoration: none;
+    }
+    .options img {
+        width: 70px;
+        height: auto;
+        padding: 10px 5vw;
+    }
+
+.spinner {
+    width: 110px;
+    height: 110px;
+
+    position: relative;
+    margin: 5vh auto;
+    visibility: hidden;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #53b796;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 3.0s infinite ease-in-out;
+    animation: sk-bounce 3.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+    0%, 100% { 
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% { 
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}

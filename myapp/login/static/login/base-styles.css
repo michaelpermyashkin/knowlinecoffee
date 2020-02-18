@@ -1,0 +1,17 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.logo-container {
+    margin-top: 7vh;
+    text-align: center;
+}
+    .logo-container img {
+        width: 140px;
+        height: auto;
+    }

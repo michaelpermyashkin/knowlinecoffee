@@ -1,0 +1,85 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/main/updates-base.css' %}?version=0">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="live-count-display" syle="background-color: red;">
+        <div class="count-0-9" style="visibility: hidden;">0</div>
+        <div class="count-10-25"></div>        
+    </div>
+    <div class="store-logo-container">
+        {% block store %}{% endblock store%}
+        <div class="current-waiting">
+            <div class="count">
+                <h1 class="waiting-count">{{ line }}</h1>
+                <p>waiting</p>
+            </div>
+        </div>           
+    </div>
+    <form id="update-form" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <div id="slider">
+            <input name="update" class="slider-widget" onmousedown="hideElems()" 
+            ontouchstart="hideElems()" onmouseup="showElems()" 
+            ontouchend="showElems()" min="0" max="25" step=NULL 
+            value="0" type="range">
+        </div>
+        <div class="options">
+            <a href="{% url 'main-home' %}">
+                <img src="{% static 'main/media/cancel.png' %}" alt="cancel">
+            </a>
+            <button type="submit">
+                <img src="{% static 'main/media/confirm.png' %}" alt="confirm">                
+            </button>
+        </div>        
+    </form>
+    <h1>{{ value }}</h1>
+</div>
+
+<script>
+    // Hides page to show counter when slider clicked
+    function hideElems() {
+        document.getElementsByClassName('store-logo-container')[0].style.visibility = 'hidden';
+        document.getElementsByClassName('live-count-display')[0].style.visibility = 'visible';
+    }
+
+    // shows page to show counter when slider is released
+    function showElems() {
+        document.getElementsByClassName('store-logo-container')[0].style.visibility = 'visible';
+        document.getElementsByClassName('live-count-display')[0].style.visibility = 'hidden';
+        document.getElementsByClassName('count-0-9')[0].style.visibility = 'hidden';
+        document.getElementsByClassName('count-10-25')[0].style.visibility = 'hidden';
+    }
+
+    // updates the value as the slider is moved
+    var elem = document.querySelector('input[type="range"]');
+    var rangeValue = function(){
+        var newValue = elem.value;
+        if (newValue < 10) {
+            document.getElementsByClassName('count-0-9')[0].style.visibility = 'visible';
+            document.getElementsByClassName('count-10-25')[0].style.visibility = 'hidden';
+            var valueDiv1 = document.querySelector('.waiting-count');
+            var valueDiv2 = document.querySelector('.count-0-9'); //large display on click
+            valueDiv1.innerHTML = newValue; 
+            valueDiv2.innerHTML = newValue; 
+        } else {
+            document.getElementsByClassName('count-0-9')[0].style.visibility = 'hidden';
+            document.getElementsByClassName('count-10-25')[0].style.visibility = 'visible';
+            var valueDiv1 = document.querySelector('.waiting-count');
+            var valueDiv2 = document.querySelector('.count-10-25'); //large display on click
+            valueDiv1.innerHTML = newValue; 
+            valueDiv2.innerHTML = newValue;  
+        }
+
+        // document.getElementsByClassName("slider-widget").value = newValue;
+    }   
+    elem.addEventListener("input", rangeValue);
+
+</script>
+
+{% endblock content %}

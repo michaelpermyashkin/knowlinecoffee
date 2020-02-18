@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %} Request {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/main/request-sent-styles.css' %}?version=11">
+<meta http-equiv="refresh" content="3;{% url 'main-home' %}">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="message-header">
+        <h1 id="top">Request sent<h1>        
+    </div>
+    <div class="message">
+        <h2>We will let you know when we get an update</h2>
+    </div>
+</div>
+{% endblock content %}

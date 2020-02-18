@@ -1,0 +1,130 @@
+{% load static %}
+{% load pwa %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% progressive_web_app_meta %}
+    <meta name="theme-color" content="#53b796"/>
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static '/main/base-styles.css' %}?version=1">
+
+    <link rel="shortcut icon" type="image/png" sizes="72x72" href="{% static 'images/icons/icon-72x72.png' %}">
+    <link rel="shortcut icon" type="image/png" sizes="96x96" href="{% static 'images/icons/icon-96x96.png' %}">
+    <link rel="shortcut icon" type="image/png" sizes="128x128" href="{% static 'images/icons/icon-128x128.png' %}">
+    <link rel="shortcut icon" type="image/png" sizes="144x144" href="{% static 'images/icons/icon-144x144.png' %}">
+    <link rel="shortcut icon" type="image/png" sizes="152x152" href="{% static 'images/icons/icon-152x152.png' %}">
+    <link rel="shortcut icon" type="image/png" sizes="192x192" href="{% static 'images/icons/icon-192x192.png' %}">
+    <link rel="shortcut icon" type="image/png" sizes="384x384" href="{% static 'images/icons/icon-384x384.png' %}">
+    <link rel="shortcut icon" type="image/png" sizes="512x512" href="{% static 'images/icons/icon-512x512.png' %}">
+
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/icons/icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="96x96" href="{% static 'images/icons/icon-96x96.png' %}">
+    <link rel="apple-touch-icon" sizes="128x128" href="{% static 'images/icons/icon-128x128.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/icons/icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/icons/icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="192x192" href="{% static 'images/icons/icon-192x192.png' %}">
+    <link rel="apple-touch-icon" sizes="384x384" href="{% static 'images/icons/icon-384x384.png' %}">
+    <link rel="apple-touch-icon" sizes="512x512" href="{% static 'images/icons/icon-512x512.png' %}">
+
+    <!-- <link rel="apple-touch-startup-image" media="screen and (device-width: 200px) and (device-height: 300px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-200x300.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 426px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-320x426.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 470px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-320x470.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-320x480.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 426px) and (device-height: 320px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-426x320.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 470px) and (device-height: 320px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-470x320.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 480px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-480x640.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 480px) and (device-height: 800px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-480x800.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 620px) and (device-height: 300px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-620x300.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 640px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-640x480.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 640px) and (device-height: 960px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-640x960.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 640px) and (device-height: 1136px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"  href="{% static 'images/icons/splash-640x1136.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 720px) and (device-height: 960px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-720x960.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 750px) and (device-height: 1294px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"  href="{% static 'images/icons/splash-750x1294.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 750px) and (device-height: 1334px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"  href="{% static 'images/icons/splash-750x1334.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"  href="{% static 'images/icons/splash-768x1024.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 828px) and (device-height: 1792px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"  href="{% static 'images/icons/splash-828x1792.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 960px) and (device-height: 720px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"   href="{% static 'images/icons/splash-960x720.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 768px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"  href="{% static 'images/icons/splash-1024x768.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1125px) and (device-height: 2436px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-1125x2436.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1152px) and (device-height: 1920px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-1152x1920.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1242px) and (device-height: 2148px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-1242x2148.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1242px) and (device-height: 2208px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-1242x2208.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1242px) and (device-height: 2688px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-1242x2688.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1536px) and (device-height: 2048px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-1536x2048.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1668px) and (device-height: 2224px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-1668x2224.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1668px) and (device-height: 2388px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-1668X2388.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 2048px) and (device-height: 1536px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-2048x1536.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 2048px) and (device-height: 2732px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-2048x2732.png' %}"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 2208px) and (device-height: 1242px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="{% static 'images/icons/splash-2208x1242.png' %}"/> -->
+    
+    {% block style %}{% endblock style %}
+    <title>KnowLineCoffee | {% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'main-home' %}" id="home-link" style="float:center;">
+            <img id="klc-label" src="{% static 'main/media/klc-label.png' %}">
+        </a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'login-signout' %}" id="account-link">
+                {% if user.first_name %}
+                    {{user.first_name | capfirst }}
+                {% elif user.username %}
+                    {{user.username | capfirst }}
+                {% else %}
+                    Account
+                {% endif %}
+            </a>
+            <a href="{% url 'login-signout' %}">
+                <img id="profile-icon" src="{% static 'main/media/profile.png' %}" alt="profile icon">
+            </a>
+        {% else %}
+            <a href="{% url 'login-signin' %}" id="account-link">
+                Login
+            </a>
+            <a href="{% url 'login-signin' %}">
+                <img id="profile-icon" src="{% static 'main/media/profile.png' %}" alt="profile icon">
+            </a>
+        {% endif %}
+    </nav>
+    <div class="logo-container">
+        <a href="{% url 'main-home' %}">
+            <img src="{% static 'main/media/klc-logo.png' %}" alt="KnowLineCoffee Logo">            
+        </a>
+    </div>
+    <div class="time-container">
+        <h5 id="day"></h5>
+        <h2 id="time"></h2>
+    </div>
+    <script>    
+        function updateClock() {
+            var now = new Date(); // current date
+            var dict = {0: 'Sunday', 1: 'Monday', 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday"};
+            var day = now.getDay();
+            var hh = now.getHours();
+            var mm = now.getMinutes();
+            var ss = now.getSeconds();
+            if (ss<10)
+                ss = '0'+ss;
+            if (mm<10)
+                mm = '0'+mm;
+            if (hh > 12)
+                hh = hh-12;
+            if (hh == 0)
+                hh = 12;
+    
+            var time = hh + ':' + mm + ':' + ss; 
+            document.getElementById('day').innerHTML = dict[day];
+            document.getElementById('time').innerHTML = time;
+    
+            setTimeout(updateClock, 1000);
+        }
+        updateClock(); // initial call
+    </script>
+
+    {% block content %}{% endblock content%}
+</body>
+</html>

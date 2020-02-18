@@ -1,0 +1,46 @@
+{% load static %}
+{% load pwa %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% progressive_web_app_meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" type="image/png" sizes="72x72" href="{% static 'images/icons/icon72x72.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/icons/icon96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="128x128" href="{% static 'images/icons/icon128x128.png' %}">
+    <link rel="icon" type="image/png" sizes="144x144" href="{% static 'images/icons/icon144x144.png' %}">
+    <link rel="icon" type="image/png" sizes="152x152" href="{% static 'images/icons/icon152x152.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/icons/icon192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="384x384" href="{% static 'images/icons/icon384x384.png' %}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{% static 'images/icons/icon512x512.png' %}">
+
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/icons/icon72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="96x96" href="{% static 'images/icons/icon96x96.png' %}">
+    <link rel="apple-touch-icon" sizes="128x128" href="{% static 'images/icons/icon128x128.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/icons/icon144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/icons/icon152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="192x192" href="{% static 'images/icons/icon192x192.png' %}">
+    <link rel="apple-touch-icon" sizes="384x384" href="{% static 'images/icons/icon384x384.png' %}">
+    <link rel="apple-touch-icon" sizes="512x512" href="{% static 'images/icons/icon512x512.png' %}">    
+
+    <title>KnowLineCoffee</title>
+</head>
+<style>
+.container {
+    text-align: center;
+}
+    .container img {
+        margin-top: 25vh;
+        width: 300px;
+        height: auto;
+    }
+</style>
+<body>
+    <div class="container">
+        <img src="{% static 'main/media/klc-logo-with-label.png' %}" alt="KnowLineCoffee Logo">
+    </div>
+</body>
+</html>

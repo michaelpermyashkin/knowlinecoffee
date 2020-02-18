@@ -1,0 +1,12 @@
+{% extends "main/updates-base.html" %}
+{% load static %}
+
+{% block title %} Dunkin {% endblock title %}
+
+{% block store %}
+<h1>Update Dunkin</h1>
+<br>
+<a href="{% url 'main-update-dunkin' %}">
+    <img id="dunkin-logo" src="{% static 'main/media/dunkin.png' %}" alt="Dunkin Donuts Logo">
+</a>
+{% endblock store %}

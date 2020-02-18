@@ -1,0 +1,12 @@
+{% extends "main/updates-base.html" %}
+{% load static %}
+
+{% block title %} Starbucks {% endblock title %}
+
+{% block store %}
+<h1>Update Starbucks</h1>
+<br>
+<a href="{% url 'main-update-starbucks' %}">
+    <img id="starbucks-logo" src="{% static 'main/media/starbucks.png' %}" alt="Starbucks Logo">
+</a>
+{% endblock store %}

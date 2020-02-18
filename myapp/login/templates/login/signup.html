@@ -1,0 +1,32 @@
+{% extends "login/base.html" %}
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/login/signup-styles.css' %}">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="header">
+        <h1>Sign Up</h1>
+        <p>Already a member? <a href="{% url 'login-signin' %}">Login</a></p>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            {% for field in form %}
+                {{ field }}
+
+                {% if field.help_text %}
+                    </br><small style="color: grey;">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+        {% endfor %}
+	<a id="cancel" href="{% url 'main-home' %}">Cancel</a>
+        <button id="submit" type="submit">Sign up</button>
+    </form>  
+</div>
+{% endblock content %}

@@ -1,0 +1,149 @@
+.container {
+    font-size: .9em;
+    color: rgb(0, 0, 0);
+}
+.store-logo-container {
+    margin: 0vh .5vw 2vh .5vw;
+    display: inline-block;
+    font-size: calc(4pt + .5vw);
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 10px 4vh 2vh 4vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    p {
+        margin-top: -.4vh;
+        color: #878787;
+        font-size: 1.1em;
+    }
+    .store-logo-container a {
+        text-decoration: none;
+    }
+    #starbucks-logo {
+        width: auto;
+        height: 90px;
+        padding: 0 7vw;
+    }
+    #dunkin-logo {
+        width: auto;
+        height: 90px;
+        padding: 0 7vw;
+    }
+    .current-waiting {
+        text-align: center;
+    }
+        .current-waiting .count {
+            font-weight: bold;
+            font-size: 1.5em;
+            width: 40%;
+            margin: 30px 30%;
+            border:2px solid rgb(0, 0, 0); 
+            background-color: rgb(245, 245, 245);
+        }
+    .count-0-9 {
+        position: absolute;
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+        font-size: 15em;
+    }
+    .count-10-25 {
+        position: absolute;
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+        font-size: 15em;
+    }
+/* SLIDER */
+input[type="range"] {
+    display: block;
+    -webkit-appearance: none;
+    background-color: #bdc3c7;
+    width: 350px;
+    height: 10px;
+    border-radius: 5px;
+    margin: 5vh auto;
+    outline: 0;
+}
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: #BD9A81;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid rgb(135, 109, 91);
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }​
+    input[type="range"]::-webkit-slider-thumb:active {
+        transform: scale(1.1);  
+    }
+.options {
+    display: inline-block;
+}
+    .options button {
+        border: 0;
+        background: none;
+        box-shadow: none;
+        border-radius: 0px;
+        cursor: pointer;
+    }
+    .options a {
+        text-decoration: none;
+    }
+    .options img {
+        width: 70px;
+        height: auto;
+        padding: 10px 50px;
+    }
+
+@media (max-height:740px) {
+    .store-logo-container {
+        margin: 0vh .5vw 0vh .5vw;
+        padding: 10px 4vh 10px 4vh;
+    }
+    .current-waiting .count {
+        margin: 10px 30%;
+    }
+    input[type="range"] {
+        display: block;
+        -webkit-appearance: none;
+        background-color: #bdc3c7;
+        width: 330px;
+        height: 6px;
+        border-radius: 5px;
+        margin: 5vh auto;
+        outline: 0;
+    }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background-color: #BD9A81;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid rgb(135, 109, 91);
+            cursor: pointer;
+            transition: .3s ease-in-out;
+        }​
+        input[type="range"]::-webkit-slider-thumb:active {
+            transform: scale(1.1);  
+        }
+    .options img {
+        width: 60px;
+        height: auto;
+        padding: 5px 10vw;
+    }
+}
+@media (max-height:640px) {
+    input[type="range"] {
+        width: 300px;
+    }
+    .options img {
+        width: 60px;
+        height: auto;
+        padding: 0 10vw 10px 10vw;
+    }
+}

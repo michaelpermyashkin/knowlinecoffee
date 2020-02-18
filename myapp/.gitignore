@@ -1,0 +1,5 @@
+*.pyc
+db.sqlite3
+/myapp/settings/local
+.vscode
+.DS_STORE

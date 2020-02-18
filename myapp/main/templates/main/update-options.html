@@ -1,0 +1,135 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %} Update {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/main/update-options-styles.css' %}">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="store-logo-container">
+        <h1>Select a store to update</h1>
+        <br>
+        <a onclick="getLocationStarbucks()">
+            <img id="starbucks-logo" src="{% static 'main/media/starbucks.png' %}" alt="Starbucks Logo">
+        </a>            
+        <a onclick="getLocationDunkin()">
+            <img id="dunkin-logo" src="{% static 'main/media/dunkin.png' %}" alt="Dunkin Logo">
+        </a>
+    </div>
+</div>
+
+<script>
+    /*
+        The app verifies the users current location is within 100 feet of starbucks
+        Location is requested from the user via browser and handles declines and exceptions accordingly
+    */
+    function getLocationStarbucks() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(allowStarbucks, showError);
+        } else { 
+            location.href="{% url 'location-unavailable' %}" 
+        }
+    }
+        function allowStarbucks(position) {
+            var starbuckLat = 40.06176;
+            var starbucksLong = -77.52175;
+            var userLat = position.coords.latitude;
+            var userLong = position.coords.longitude;
+            
+            // test at 99 feet from center
+            //var dis = getDistanceFromLatLonInFt(starbuckLat, starbucksLong, 40.061752,-77.521393);
+            var dis = getDistanceFromLatLonInFt(starbuckLat, starbucksLong, userLat, userLong);
+            if (dis < 100) {
+                location.href="{% url 'main-update-starbucks' %}";
+            } else {
+                location.href="{% url 'location-invalid' %}";
+            }
+        }
+
+    /*
+        The app verifies the users current location is within 85 feet of dunkin
+        Location is requested from the user via browser and handles declines and exceptions accordingly
+    */
+    function getLocationDunkin() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(allowDunkin, showError);
+        } else { 
+            location.href="{% url 'location-unavailable' %}";
+        }
+    }
+        function allowDunkin(position) {
+            var dunkinLat = 40.06268;
+            var dunkinLong = -77.52152;
+            var userLat = position.coords.latitude;
+            var userLong = position.coords.longitude;
+            
+            // test at 75 feet from center
+            // var dis = getDistanceFromLatLonInFt(dunkinLat, dunkinLong, 40.062413,-77.521275);
+            var dis = getDistanceFromLatLonInFt(dunkinLat, dunkinLong, userLat, userLong);
+            if (dis < 85) {
+                location.href="{% url 'main-update-dunkin' %}";
+            } else {
+                location.href="{% url 'location-invalid' %}";
+            }
+        }
+
+    // calculates distance between points in feet
+    function getDistanceFromLatLonInFt(lat1, lon1, lat2, lon2) {
+        var R = 20902464; // Radius of the earth in ft
+        var dLat = deg2rad(lat2-lat1);  // deg2rad below
+        var dLon = deg2rad(lon2-lon1); 
+        var a = 
+            Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+            Math.sin(dLon/2) * Math.sin(dLon/2)
+            ; 
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+        var d = R * c; // Distance in feet
+        return d;
+    }
+        function deg2rad(deg) {
+            return deg * (Math.PI/180);
+        }
+
+    // handles error with geolocation
+    function showError(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                location.href="{% url 'location-denied' %}";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                location.href="{% url 'location-unavailable' %}"; 
+                break;
+            case error.TIMEOUT:
+                location.href="{% url 'location-unavailable' %}"; 
+                break;
+            case error.UNKNOWN_ERROR:
+                location.href="{% url 'location-unavailable' %}"; 
+                break;
+        }
+    }
+
+    // for testing at home
+    function getLocationHome() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(allowHome, showError);
+        } else { 
+            location.href="{% url 'location-unavailable' %}" 
+        }
+    }
+        function allowHome(position) {
+            var homeLat = 40.06276;
+            var homeLong = -77.52644;
+            var userLat = position.coords.latitude;
+            var userLong = position.coords.longitude;
+            
+            var dis = getDistanceFromLatLonInFt(homeLat, homeLong, userLat, userLong);
+            if (dis < 100) {
+                location.href="{% url 'main-update-starbucks' %}";
+            } else {
+                location.href="{% url 'location-invalid' %}";
+            }
+        }
+</script>
+{% endblock content %}

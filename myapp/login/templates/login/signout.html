@@ -1,0 +1,21 @@
+{% extends "login/base.html" %}
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/login/signout-styles.css' %}?version=1">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="header">
+        <h1>Hello {{user.first_name}}!</h1>
+        <h3 id="sub">You are about to sign out.</h3>
+        <h3>Are you sure?</h3>
+        <div class="options">
+            <a id="cancel" href="{% url 'main-home' %}"><h3>No, go back</h3></a>
+            <a id="signout" href="/accounts/logout"><h3>Yes, sign me out</h3></a>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

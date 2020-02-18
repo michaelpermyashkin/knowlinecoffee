@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %} Update {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/main/update-denied-styles.css' %}?version=11">
+<meta http-equiv="refresh" content="4;{% url 'main-home' %}">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="message-header">
+        <h1 id="top">Oops, you aren't close enough<h1>        
+    </div>
+    <div class="message">
+        <h2>You must be near a location to update</h2>
+        <h3>We try to keep updates accurate this way, but we're not perfect!</h3>
+    </div>
+</div>
+{% endblock content %}

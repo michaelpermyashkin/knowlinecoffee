@@ -1,0 +1,175 @@
+.updates-container {
+    margin-bottom: 3vh;
+    display: inline-block;
+    font-size: calc(4pt + .5vw);
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    .recent-updates {
+        width: 95vw;
+        max-width: 700px;
+    }
+        span {
+            font-size: 2em;
+            color:rgb(0, 0, 0);
+        }
+    .store-logo-container {
+        height: 100px;
+        width: auto;
+    }
+    .starbucks-container {
+        float: left;
+        width: 49%;
+    }
+        .starbucks-logo{
+            width: auto;
+            height: 110px;
+        }
+    .dunkin-container {
+        float: right;
+        width: 49%;
+        border-left: 1px solid black;
+    }
+        .dunkin-logo {
+            width: auto;
+            height: 110px;
+        }
+    .updates-container .text-container {
+        font-weight: bold;
+        margin-top: 4vh;
+    }
+        .current-waiting {
+            text-align: center;
+            display: inline-block;
+        }
+            .current-waiting .count {
+                width: 70px;
+                border:2px solid; 
+            }
+                .count {
+                    text-align: center;
+                }
+                .count h1 {
+                    font-size: 15pt;
+                }
+                .count p {
+                    font-size: 8pt;
+                    color: #878787;
+                }
+            .text-container h3 {
+                font-size: 1.2em;
+            }
+.options-container {
+    padding-top: 1vh;
+    display: block;
+}
+    .options-container a {
+        text-decoration: none;
+        font-size: 1.25em;
+        cursor: pointer;
+    }
+        .update {
+            color: #abe4d1;
+            background-color: #53b796;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: min(20vw, 150px);
+            padding-right: min(20vw, 150px);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .request-container {
+            margin-top: 27px;
+            color: black;
+        }
+        .request {
+            color: #519b83;
+            background-color: #94d2be;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: min(19.5vw, 149px);
+            padding-right: min(19.5vw, 149px);
+            border-radius: 10px;
+        }
+@media (max-width:650px) {
+    .options-container {
+        position: absolute;
+        bottom:0;
+        width:100%;
+        display: block;
+        font-weight: bold;
+    }
+        .options-container a {
+            text-decoration: none;
+            font-size: 1.5em;
+            display:inline-block;
+            width: 100%;
+            border-radius: 0;
+        }
+            .update {
+                padding: 3vh 0;
+            }
+            .request-container {
+                margin-top: 0;
+                color: black;
+            }
+            .request {
+                padding: 3vh 0;
+            }
+}
+@media (min-width:650px) {
+    .options-container {
+        padding-top: 2vh;
+        display: block;
+    }
+        .options-container a {
+            text-decoration: none;
+            font-size: 1.25em;
+        }
+            .update {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: min(20vw, 150px);
+                padding-right: min(20vw, 150px);
+                border-radius: 10px;
+            }
+            .request-container {
+                margin-top: 27px;
+                width: 100%;
+            }
+            .request {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: min(19.5vw, 149px);
+                padding-right: min(19.5vw, 149px);
+                border-radius: 10px;
+            }
+}
+@media (max-height: 816px) {
+    .updates-container {
+        margin-top: 5em;
+    }
+}
+@media (max-height: 740px) {
+    .updates-container {
+        margin-top: 4em;
+    }
+}
+@media (max-height: 680px) {
+    .updates-container {
+        margin-top: 3em;
+    }
+}
+@media (max-height: 620px) {
+    .updates-container {
+        margin-top: 3em;
+    }
+}
+@media (max-height: 590px) {
+    .updates-container {
+        margin-top: 2em;
+    }
+}

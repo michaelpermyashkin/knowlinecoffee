@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %} Update {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/main/update-denied-styles.css' %}?version=11">
+<meta http-equiv="refresh" content="4;{% url 'main-home' %}">
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="message-header">
+        <h1 id="top">Oops, we don't know where you are<h1>        
+    </div>
+    <div class="message">
+        <h2>We need to verify your location to allow an update</h2>
+        <h3>You may need to change your browser settings to share your location</h3>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,105 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+    a {
+        cursor: pointer;
+    }
+    body nav {
+        display: block;
+        text-align: center;
+        height: auto;
+        padding: 2vh 0 1vh 0;
+        background-color: rgb(255, 255, 255);
+    }
+        #klc-label {
+            width: 220px;
+            height: auto;
+        }
+        @media (max-width:325px) {
+            #klc-label {
+                width: 170px;
+                height: auto;
+            }
+        }
+        #home-link {
+            text-decoration-line: none;
+            text-decoration-color: none;
+            color: #717171;
+            font-size: 1.5em;
+        }
+        @media (min-width:650px) {
+            #account-link {
+                position: absolute;
+                right: 3vw;
+                text-decoration: none;
+                color: #717171;
+                font-size: 0.9em;
+                margin-top: 0.7vh;
+            }  
+            #profile-icon {
+                display: none;    
+            }
+        }        
+        @media (max-width:650px) {
+            #account-link {
+                display: none;
+            }           
+            #profile-icon {
+                position: absolute;
+                right: 5vw;
+                text-decoration: none;
+                margin-top: 0.25vh;
+                width: 20px;
+                height: auto;
+            }
+        }
+.logo-container {
+    margin-top: .5vh;
+    text-align: center;
+    background-color: white;
+}
+    .logo-container img {
+        width: 100px;
+        height: auto;
+    }
+    @media (max-height:570px) {
+        .logo-container {
+            position: absolute;
+            display: none;
+        }
+            .logo-container img {
+                position: absolute;
+                display: none;
+            }
+    }
+.time-container {
+    margin-top: 1em;
+}
+#day {
+    color: rgb(143, 143, 143);
+    font-size: 0.75em;
+}
+#time{
+    margin-top: -25px;
+    font-size: 1.75em;
+    font-weight: bold;
+    color: rgb(104, 104, 104);
+}
+@media (max-height:670px) {
+    .logo-container {
+        margin-top: .5vh;
+        text-align: center;
+        background-color: white;
+    }
+        .logo-container img {
+            width: 90px;
+            height: auto;
+        }
+}
+
