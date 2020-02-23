@@ -6,6 +6,7 @@ I wanted to experiment with web development and challenge myself by building a p
 
 ## The Result
 [View Flyer](KLC-flyer.pdf)
+
 [Visit Site](https://www.knowlinecoffee.com)
 
 ### User Interface
