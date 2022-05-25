@@ -15,7 +15,7 @@ oauthlib==3.1.0
 pathspec==0.7.0
 pipdeptree==0.13.2
 pycodestyle==2.5.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 python-social-auth==0.2.1
 python3-openid==3.1.0
 pytz==2019.3
